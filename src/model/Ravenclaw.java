@@ -15,14 +15,11 @@ public class Ravenclaw extends Hogwarts {
         this.creativity = creativity;
     }
 
-    public void printPowerDifference(Ravenclaw student) {
-        if (this.getPower() > student.getPower()) {
-            System.out.printf("%s лучший Коктевранец, чем %s%n", this.getName(), student.getName());
-        } else if (this.getPower() < student.getPower()) {
-            System.out.printf("%s лучший Коктевранец, чем %s%n", student.getName(), this.getName());
-        } else {
-            System.out.printf("%s такой же Коктевранец, чем %s%n", this.getName(), student.getName());
+    protected String getPowerDifferenceGetResult(String winner, String loser, boolean isDraw) {
+        if (isDraw) {
+            return String.format("%s лучший Коктевранец, чем %s%n", winner, loser);
         }
+        return String.format("%s такой же Коктевранец, чем %s%n", winner, loser);
     }
 
     protected int getPower() {

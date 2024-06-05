@@ -17,14 +17,11 @@ public class Slytherin extends Hogwarts {
         this.powerHungry = powerHungry;
     }
 
-    public void printPowerDifference(Slytherin student) {
-        if (this.getPower() > student.getPower()) {
-            System.out.printf("%s лучший Слизеринец, чем %s%n", this.getName(), student.getName());
-        } else if (this.getPower() < student.getPower()) {
-            System.out.printf("%s лучший Слизеринец, чем %s%n", student.getName(), this.getName());
-        } else {
-            System.out.printf("%s такой же лучший Слизеринец, чем %s%n", this.getName(), student.getName());
+    protected String getPowerDifferenceGetResult(String winner, String loser, boolean isDraw) {
+        if (isDraw) {
+            return String.format("%s лучший Слизеринец, чем %s%n", winner, loser);
         }
+        return String.format("%s такой же Слизеринец, чем %s%n", winner, loser);
     }
 
     protected int getPower() {

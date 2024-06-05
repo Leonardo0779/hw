@@ -12,14 +12,11 @@ public class Gryffindor extends Hogwarts {
         this.bravery = bravery;
     }
 
-    public void printPowerDifference(Gryffindor student) {
-        if (this.getPower() > student.getPower()) {
-            System.out.printf("%s лучший Гриффиндорец, чем %s%n", this.getName(), student.getName());
-        } else if (this.getPower() < student.getPower()) {
-            System.out.printf("%s лучший Гриффиндорец, чем %s%n", student.getName(), this.getName());
-        } else {
-            System.out.printf("%s такой же Гриффиндорец, чем %s%n", this.getName(), student.getName());
+    protected String getPowerDifferenceGetResult(String winner, String loser, boolean isDraw) {
+        if (isDraw) {
+            return String.format("%s лучший Гриффиндорец, чем %s%n", winner, loser);
         }
+        return String.format("%s такой же Гриффиндорец, чем %s%n", winner, loser);
     }
 
     protected int getPower() {

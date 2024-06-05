@@ -12,14 +12,11 @@ public class Hufflepuff extends Hogwarts {
         this.honesty = honesty;
     }
 
-    public void printPowerDifference(Hufflepuff student) {
-        if (this.getPower() > student.getPower()) {
-            System.out.printf("%s лучший Пуффендуец, чем %s%n", this.getName(), student.getName());
-        } else if (this.getPower() < student.getPower()) {
-            System.out.printf("%s лучший Пуффендуец, чем %s%n", student.getName(), this.getName());
-        } else {
-            System.out.printf("%s такой же Пуффендуец, чем %s%n", this.getName(), student.getName());
+    protected String getPowerDifferenceGetResult(String winner, String loser, boolean isDraw) {
+        if (isDraw) {
+            return String.format("%s лучший Пуффендуец, чем %s%n", winner, loser);
         }
+        return String.format("%s такой же Пуффендуец чем %s%n", winner, loser);
     }
 
     protected int getPower() {
