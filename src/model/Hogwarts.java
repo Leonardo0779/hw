@@ -40,18 +40,19 @@ public class Hogwarts {
 
     public void printPowerDifference(Hogwarts student) {
         if (this.getPower() > student.getPower()) {
-            System.out.printf(getPowerDifferenceGetResult(this.getName(), student.getName(),false));
+            System.out.printf(getPowerDifferenceGetResult(this.getName(), student.getName(), false));
         } else if (this.getPower() < student.getPower()) {
-            System.out.printf(getPowerDifferenceGetResult(student.getName(), this.getName(),false));
+            System.out.printf(getPowerDifferenceGetResult(student.getName(), this.getName(), false));
         } else {
-            System.out.printf(getPowerDifferenceGetResult( this.getName(), student.getName(),true));
+            System.out.printf(getPowerDifferenceGetResult(this.getName(), student.getName(), true));
         }
     }
-    protected String getPowerDifferenceGetResult(String winner, String loser,boolean isDraw) {
+
+    protected String getPowerDifferenceGetResult(String winner, String loser, boolean isDraw) {
         if (isDraw) {
             return String.format("%s обладает такой же мощностью магии, чем %s%n", winner, loser);
         }
-        return String.format("%s обладает большей мощностью магии, чем %s%n",winner,loser);
+        return String.format("%s обладает большей мощностью магии, чем %s%n", winner, loser);
     }
 
     protected int getPower() {

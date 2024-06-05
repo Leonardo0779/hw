@@ -34,6 +34,7 @@ public class Main {
         System.out.println(sergey);
         System.out.println(oleg);
 
+
         sergey.printPowerDifference(oleg);
     }
 }
